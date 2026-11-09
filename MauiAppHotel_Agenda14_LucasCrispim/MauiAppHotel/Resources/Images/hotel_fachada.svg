@@ -1,0 +1,47 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="320" height="180" viewBox="0 0 320 180">
+  <defs>
+    <linearGradient id="ceu" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F3C877"/>
+      <stop offset="0.55" stop-color="#F7E2B5"/>
+      <stop offset="1" stop-color="#CFE3EE"/>
+    </linearGradient>
+    <linearGradient id="mar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3A9A94"/>
+      <stop offset="1" stop-color="#0F5257"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="180" fill="url(#ceu)"/>
+  <circle cx="250" cy="112" r="34" fill="#F9A94B" opacity="0.9"/>
+  <rect y="122" width="320" height="58" fill="url(#mar)"/>
+  <rect x="214" y="132" width="72" height="3" rx="1.5" fill="#F9C77A" opacity="0.7"/>
+  <rect x="226" y="142" width="48" height="3" rx="1.5" fill="#F9C77A" opacity="0.5"/>
+  <rect x="236" y="152" width="28" height="3" rx="1.5" fill="#F9C77A" opacity="0.35"/>
+  <!-- prédio principal -->
+  <rect x="40" y="40" width="110" height="100" fill="#FDFBF6"/>
+  <rect x="40" y="34" width="110" height="10" fill="#0F5257"/>
+  <rect x="82" y="22" width="26" height="14" fill="#D1603D"/>
+  <g fill="#7FA9C4">
+    <rect x="52" y="54" width="16" height="14"/><rect x="76" y="54" width="16" height="14"/><rect x="100" y="54" width="16" height="14"/><rect x="124" y="54" width="16" height="14"/>
+    <rect x="52" y="76" width="16" height="14"/><rect x="76" y="76" width="16" height="14"/><rect x="100" y="76" width="16" height="14"/><rect x="124" y="76" width="16" height="14"/>
+    <rect x="52" y="98" width="16" height="14"/><rect x="124" y="98" width="16" height="14"/>
+  </g>
+  <rect x="80" y="100" width="30" height="40" fill="#0F5257"/>
+  <rect x="74" y="96" width="42" height="6" fill="#D1603D"/>
+  <!-- ala lateral -->
+  <rect x="150" y="70" width="50" height="70" fill="#EFE7D6"/>
+  <g fill="#7FA9C4">
+    <rect x="160" y="82" width="12" height="12"/><rect x="180" y="82" width="12" height="12"/>
+    <rect x="160" y="104" width="12" height="12"/><rect x="180" y="104" width="12" height="12"/>
+  </g>
+  <!-- calçada -->
+  <rect y="138" width="210" height="6" fill="#D9CBA8"/>
+  <!-- palmeira -->
+  <rect x="20" y="78" width="5" height="62" fill="#7A5A3A"/>
+  <ellipse cx="10" cy="80" rx="16" ry="5" fill="#3E7D5A"/>
+  <ellipse cx="34" cy="78" rx="16" ry="5" fill="#3E7D5A"/>
+  <ellipse cx="22" cy="72" rx="6" ry="12" fill="#4C9A6E"/>
+  <rect x="206" y="88" width="5" height="52" fill="#7A5A3A"/>
+  <ellipse cx="196" cy="90" rx="14" ry="4.5" fill="#3E7D5A"/>
+  <ellipse cx="220" cy="88" rx="14" ry="4.5" fill="#3E7D5A"/>
+  <ellipse cx="208" cy="83" rx="5" ry="10" fill="#4C9A6E"/>
+</svg>

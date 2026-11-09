@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.HospedagemContratada"
+             Title="Hospedagem Contratada"
+             BackgroundColor="{StaticResource HotelFundo}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="12">
+
+            <Label Text="Resumo da Reserva"
+                   FontFamily="KalamBold"
+                   FontSize="30"
+                   HorizontalOptions="Center"
+                   TextColor="{StaticResource HotelPrimaria}" />
+
+            <Border Style="{StaticResource CartaoHotel}">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Suíte" Style="{StaticResource TituloCartao}" />
+                    <Label Text="{Binding QuartoSelecionado.Descricao}" FontSize="18" FontAttributes="Bold" />
+                    <Label Text="{Binding QuartoSelecionado.ValorDiariaAdulto, StringFormat='Diária adulto: {0:C}'}" />
+                    <Label Text="{Binding QuartoSelecionado.ValorDiariaCrianca, StringFormat='Diária criança: {0:C}'}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Style="{StaticResource CartaoHotel}">
+                <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                      ColumnDefinitions="*, Auto"
+                      RowSpacing="6">
+                    <Label Grid.ColumnSpan="2" Text="Estadia" Style="{StaticResource TituloCartao}" />
+
+                    <Label Grid.Row="1" Text="Adultos:" />
+                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding QntAdultos}" FontAttributes="Bold" />
+
+                    <Label Grid.Row="2" Text="Crianças:" />
+                    <Label Grid.Row="2" Grid.Column="1" Text="{Binding QntCriancas}" FontAttributes="Bold" />
+
+                    <Label Grid.Row="3" Text="Check-in:" />
+                    <Label Grid.Row="3" Grid.Column="1" Text="{Binding DataCheckIn, StringFormat='{0:dd/MM/yyyy}'}" FontAttributes="Bold" />
+
+                    <Label Grid.Row="4" Text="Check-out:" />
+                    <Label Grid.Row="4" Grid.Column="1" Text="{Binding DataCheckOut, StringFormat='{0:dd/MM/yyyy}'}" FontAttributes="Bold" />
+                </Grid>
+            </Border>
+
+            <Border Style="{StaticResource CartaoHotel}"
+                    BackgroundColor="{StaticResource HotelPrimaria}">
+                <VerticalStackLayout Spacing="4">
+                    <Label Text="{Binding Estadia, StringFormat='{0} diária(s)'}"
+                           TextColor="{StaticResource HotelDestaque}"
+                           FontAttributes="Bold" />
+                    <Label Text="{Binding ValorDiaria, StringFormat='Valor por diária: {0:C}'}"
+                           TextColor="White" />
+                    <Label Text="{Binding ValorTotal, StringFormat='Total: {0:C}'}"
+                           TextColor="White"
+                           FontSize="26"
+                           FontAttributes="Bold" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Button Text="Voltar"
+                    CornerRadius="24"
+                    HeightRequest="48"
+                    BackgroundColor="{StaticResource HotelDestaque}"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    Clicked="Voltar_Clicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

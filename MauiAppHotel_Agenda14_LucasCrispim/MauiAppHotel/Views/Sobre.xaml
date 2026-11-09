@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.Sobre"
+             Title="Sobre"
+             BackgroundColor="{StaticResource HotelFundo}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="14">
+
+            <Image Source="logo_hotel.png"
+                   HeightRequest="110"
+                   WidthRequest="110"
+                   HorizontalOptions="Center" />
+
+            <Label Text="Hotel Horizonte"
+                   FontFamily="KalamBold"
+                   FontSize="34"
+                   HorizontalOptions="Center"
+                   TextColor="{StaticResource HotelPrimaria}" />
+
+            <Label x:Name="lbl_versao"
+                   HorizontalOptions="Center"
+                   TextColor="{StaticResource HotelSuave}" />
+
+            <Border Style="{StaticResource CartaoHotel}">
+                <VerticalStackLayout Spacing="4">
+                    <Label Text="Desenvolvedor" Style="{StaticResource TituloCartao}" />
+                    <Label Text="Lucas Crispim da Silva Rodrigues"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="{StaticResource HotelPrimaria}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Style="{StaticResource CartaoHotel}">
+                <Grid RowDefinitions="Auto,Auto,Auto,Auto"
+                      ColumnDefinitions="Auto, *"
+                      RowSpacing="8"
+                      ColumnSpacing="12">
+                    <Label Grid.ColumnSpan="2" Text="Projeto" Style="{StaticResource TituloCartao}" />
+
+                    <Label Grid.Row="1" Text="Ano:" TextColor="{StaticResource HotelSuave}" />
+                    <Label Grid.Row="1" Grid.Column="1" Text="2026" FontAttributes="Bold" />
+
+                    <Label Grid.Row="2" Text="Curso:" TextColor="{StaticResource HotelSuave}" />
+                    <Label Grid.Row="2" Grid.Column="1" Text="Técnico em Desenvolvimento de Sistemas" FontAttributes="Bold" />
+
+                    <Label Grid.Row="3" Text="Disciplina:" TextColor="{StaticResource HotelSuave}" />
+                    <Label Grid.Row="3" Grid.Column="1" Text="Desenvolvimento de Sistemas II – Agendas 13 e 14" FontAttributes="Bold" />
+                </Grid>
+            </Border>
+
+            <Border Style="{StaticResource CartaoHotel}">
+                <VerticalStackLayout Spacing="4">
+                    <Label Text="Tecnologias" Style="{StaticResource TituloCartao}" />
+                    <Label Text="C# · XAML · .NET MAUI 8" />
+                    <Label Text="Componentes: Image, Stepper, Picker, DatePicker, CollectionView e BindingContext. Orientação a objetos: classes, encapsulamento (get/set com validação) e List de objetos."
+                           TextColor="{StaticResource HotelSuave}"
+                           FontSize="13" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Label Text="App de cálculo de diárias desenvolvido para fins acadêmicos."
+                   HorizontalTextAlignment="Center"
+                   FontSize="12"
+                   TextColor="{StaticResource HotelSuave}" />
+
+            <Button Text="Voltar"
+                    CornerRadius="24"
+                    HeightRequest="48"
+                    BackgroundColor="{StaticResource HotelPrimaria}"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    Clicked="Voltar_Clicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

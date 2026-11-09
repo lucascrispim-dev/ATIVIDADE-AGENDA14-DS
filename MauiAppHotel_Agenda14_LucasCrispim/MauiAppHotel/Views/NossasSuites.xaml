@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:MauiAppHotel.Models"
+             x:Class="MauiAppHotel.Views.NossasSuites"
+             Title="Nossas Suítes"
+             BackgroundColor="{StaticResource HotelFundo}">
+
+    <Grid RowDefinitions="Auto, *" Padding="16,12,16,0" RowSpacing="8">
+
+        <VerticalStackLayout Spacing="2">
+            <Label Text="Escolha o seu cantinho"
+                   FontFamily="KalamBold"
+                   FontSize="28"
+                   TextColor="{StaticResource HotelPrimaria}" />
+            <Label Text="Toque em uma suíte para reservá-la."
+                   FontSize="13"
+                   TextColor="{StaticResource HotelSuave}" />
+        </VerticalStackLayout>
+
+        <!-- Lista montada a partir do array de objetos (List<Quarto>) do App -->
+        <CollectionView Grid.Row="1"
+                        x:Name="cv_suites"
+                        SelectionMode="Single"
+                        SelectionChanged="cv_suites_SelectionChanged">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Quarto">
+                    <Border Style="{StaticResource CartaoHotel}">
+                        <Grid ColumnDefinitions="6, *" ColumnSpacing="12">
+                            <BoxView Color="{StaticResource HotelDestaque}" CornerRadius="3" />
+                            <VerticalStackLayout Grid.Column="1" Spacing="3">
+                                <Label Text="{Binding Descricao}"
+                                       FontSize="17"
+                                       FontAttributes="Bold"
+                                       TextColor="{StaticResource HotelPrimaria}" />
+                                <Label Text="{Binding Detalhes}"
+                                       FontSize="13"
+                                       TextColor="{StaticResource HotelSuave}" />
+                                <Label Text="{Binding ResumoPrecos}" FontSize="13" />
+                                <Label Text="{Binding ResumoCapacidade}"
+                                       FontSize="12"
+                                       FontAttributes="Bold"
+                                       TextColor="{StaticResource HotelDestaque}" />
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+            <CollectionView.Footer>
+                <BoxView HeightRequest="12" Color="Transparent" />
+            </CollectionView.Footer>
+        </CollectionView>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,17 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <circle cx="60" cy="60" r="58" fill="#0F5257"/>
+  <circle cx="60" cy="60" r="52" fill="none" stroke="#D1603D" stroke-width="2"/>
+  <!-- sol nascendo no horizonte -->
+  <path d="M30 70 A30 30 0 0 1 90 70 Z" fill="#D1603D"/>
+  <rect x="24" y="74" width="72" height="4" rx="2" fill="#FAF3EA"/>
+  <rect x="34" y="82" width="52" height="3" rx="1.5" fill="#FAF3EA" opacity="0.7"/>
+  <rect x="44" y="89" width="32" height="3" rx="1.5" fill="#FAF3EA" opacity="0.45"/>
+  <!-- letra H -->
+  <rect x="47" y="34" width="6" height="30" fill="#0F5257"/>
+  <rect x="67" y="34" width="6" height="30" fill="#0F5257"/>
+  <rect x="47" y="46" width="26" height="5" fill="#0F5257"/>
+  <!-- estrelas -->
+  <circle cx="44" cy="26" r="2" fill="#D1603D"/>
+  <circle cx="60" cy="22" r="2.4" fill="#D1603D"/>
+  <circle cx="76" cy="26" r="2" fill="#D1603D"/>
+</svg>

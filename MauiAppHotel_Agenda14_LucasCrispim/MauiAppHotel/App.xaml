@@ -1,0 +1,40 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiAppHotel"
+             x:Class="MauiAppHotel.App">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style TargetType="Label">
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="TextColor" Value="#1F2A33" />
+            </Style>
+
+            <!-- Cartão branco arredondado usado em todas as telas -->
+            <Style x:Key="CartaoHotel" TargetType="Border">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="Stroke" Value="#EAD9C6" />
+                <Setter Property="StrokeThickness" Value="1" />
+                <Setter Property="StrokeShape" Value="RoundRectangle 16" />
+                <Setter Property="Padding" Value="16,12" />
+            </Style>
+
+            <!-- Título dos cartões -->
+            <Style x:Key="TituloCartao" TargetType="Label">
+                <Setter Property="TextTransform" Value="Uppercase" />
+                <Setter Property="FontSize" Value="13" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="CharacterSpacing" Value="1.2" />
+                <Setter Property="TextColor" Value="{StaticResource HotelDestaque}" />
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>

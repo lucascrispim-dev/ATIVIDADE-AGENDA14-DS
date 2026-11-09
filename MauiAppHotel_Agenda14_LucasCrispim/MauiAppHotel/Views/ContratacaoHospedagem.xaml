@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.ContratacaoHospedagem"
+             Title="Cálculo da Diária"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource HotelFundo}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="12">
+
+            <!-- Cabeçalho com a imagem do hotel -->
+            <Grid ColumnDefinitions="*, Auto">
+                <VerticalStackLayout VerticalOptions="Center">
+                    <Label Text="Hotel Horizonte"
+                           FontFamily="KalamBold"
+                           FontSize="34"
+                           TextColor="{StaticResource HotelPrimaria}" />
+                    <Label Text="Seu descanso começa aqui"
+                           FontSize="14"
+                           TextColor="{StaticResource HotelSuave}" />
+                </VerticalStackLayout>
+
+                <Button Grid.Column="1"
+                        x:Name="btn_sobre"
+                        Text="Sobre"
+                        AutomationId="btn_sobre"
+                        VerticalOptions="Center"
+                        BackgroundColor="Transparent"
+                        BorderColor="{StaticResource HotelDestaque}"
+                        BorderWidth="1.5"
+                        TextColor="{StaticResource HotelPrimaria}"
+                        CornerRadius="18"
+                        Padding="16,6"
+                        Clicked="btn_sobre_Clicked" />
+            </Grid>
+
+            <Border StrokeThickness="0"
+                    StrokeShape="RoundRectangle 18"
+                    HeightRequest="170">
+                <Image Source="hotel_fachada.png" Aspect="AspectFill" />
+            </Border>
+
+            <Label Text="Cálculo da Diária"
+                   FontFamily="Kalam"
+                   FontSize="30"
+                   HorizontalOptions="Center"
+                   TextColor="{StaticResource HotelPrimaria}" />
+
+            <!-- Hóspedes -->
+            <Border Style="{StaticResource CartaoHotel}">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Hóspedes" Style="{StaticResource TituloCartao}" />
+
+                    <Grid RowDefinitions="Auto, Auto"
+                          ColumnDefinitions="*, Auto, Auto"
+                          RowSpacing="10"
+                          ColumnSpacing="12">
+
+                        <Label Grid.Row="0" Grid.Column="0"
+                               Text="Adultos:"
+                               VerticalOptions="Center" />
+
+                        <Label Grid.Row="0" Grid.Column="1"
+                               FontAttributes="Bold"
+                               FontSize="18"
+                               VerticalOptions="Center"
+                               TextColor="{StaticResource HotelDestaque}"
+                               Text="{Binding Value}"
+                               BindingContext="{x:Reference stp_adultos}" />
+
+                        <Stepper Grid.Row="0" Grid.Column="2"
+                                 x:Name="stp_adultos"
+                                 Minimum="1"
+                                 Maximum="10"
+                                 Increment="1"
+                                 Value="1" />
+
+                        <Label Grid.Row="1" Grid.Column="0"
+                               Text="Crianças:"
+                               VerticalOptions="Center" />
+
+                        <Label Grid.Row="1" Grid.Column="1"
+                               FontAttributes="Bold"
+                               FontSize="18"
+                               VerticalOptions="Center"
+                               TextColor="{StaticResource HotelDestaque}"
+                               Text="{Binding Value}"
+                               BindingContext="{x:Reference stp_criancas}" />
+
+                        <Stepper Grid.Row="1" Grid.Column="2"
+                                 x:Name="stp_criancas"
+                                 Minimum="0"
+                                 Maximum="10"
+                                 Increment="1" />
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Suíte -->
+            <Border Style="{StaticResource CartaoHotel}">
+                <VerticalStackLayout Spacing="4">
+                    <Label Text="Escolha sua Suíte" Style="{StaticResource TituloCartao}" />
+
+                    <Picker x:Name="pck_quarto"
+                            Title="Selecione sua Acomodação"
+                            ItemDisplayBinding="{Binding Descricao}" />
+
+                    <Button Text="Ver todas as suítes  →"
+                            x:Name="btn_suites"
+                            HorizontalOptions="Start"
+                            BackgroundColor="Transparent"
+                            TextColor="{StaticResource HotelDestaque}"
+                            FontAttributes="Bold"
+                            Padding="0"
+                            Clicked="btn_suites_Clicked" />
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Período -->
+            <Border Style="{StaticResource CartaoHotel}">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Período da Estadia" Style="{StaticResource TituloCartao}" />
+
+                    <Grid ColumnDefinitions="*, *" ColumnSpacing="12">
+                        <VerticalStackLayout>
+                            <Label Text="Check-in" TextColor="{StaticResource HotelSuave}" FontSize="12" />
+                            <DatePicker x:Name="dtpck_checkin"
+                                        Format="dd/MM/yyyy"
+                                        DateSelected="dtpck_checkin_DateSelected" />
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Grid.Column="1">
+                            <Label Text="Check-out" TextColor="{StaticResource HotelSuave}" FontSize="12" />
+                            <DatePicker x:Name="dtpck_checkout"
+                                        Format="dd/MM/yyyy"
+                                        DateSelected="dtpck_checkout_DateSelected" />
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <Label x:Name="lbl_noites"
+                           FontAttributes="Bold"
+                           TextColor="{StaticResource HotelDestaque}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Button Text="Avançar"
+                    x:Name="btn_avancar"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    HeightRequest="48"
+                    CornerRadius="24"
+                    BackgroundColor="{StaticResource HotelPrimaria}"
+                    TextColor="White"
+                    Clicked="btn_avancar_Clicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
